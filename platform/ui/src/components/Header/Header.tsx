@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 
 import NavBar from '../NavBar';
-import Svg from '../Svg';
+import lamisLogo from '../../assets/lamis/logo.png';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Dropdown from '../Dropdown';
@@ -39,7 +39,7 @@ function Header({
       isSticky={isSticky}
       {...props}
     >
-      <div className="relative h-[48px] items-center ">
+      <div className="relative h-[48px] items-center">
         <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center">
           <div
             className={classNames(
@@ -55,12 +55,21 @@ function Header({
                 className="text-primary-active w-8"
               />
             )}
-            <div className="ml-1">
-              {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Svg name="logo-ohif" />}
+            <div className="ml-2">
+              {WhiteLabeling?.createLogoComponentFn?.(React, props) || (
+                <div className="flex gap-2">
+                  <img
+                    className="h-6 w-6"
+                    src={lamisLogo}
+                    alt="logo"
+                  />
+                  <label className="text-white">LAMIS</label>
+                </div>
+              )}
             </div>
           </div>
         </div>
-        <div className="absolute top-1/2 left-[250px]  h-8 -translate-y-1/2">{Secondary}</div>
+        <div className="absolute top-1/2 left-[250px] h-8 -translate-y-1/2">{Secondary}</div>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <div className="flex items-center justify-center space-x-2">{children}</div>
         </div>
