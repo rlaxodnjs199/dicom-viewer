@@ -63,7 +63,7 @@ function Header({
                     src={lamisLogo}
                     alt="logo"
                   />
-                  <label className="text-white">LAMIS</label>
+                  <label className="tracking-tight text-white">LAMIS</label>
                 </div>
               )}
             </div>
