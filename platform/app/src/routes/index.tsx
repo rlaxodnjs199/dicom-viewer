@@ -6,7 +6,7 @@ import { ErrorBoundary } from '@ohif/ui';
 import DataSourceWrapper from './DataSourceWrapper';
 import WorkList from './WorkList';
 import Local from './Local';
-import Login from './Login';
+import SignIn from './SignIn';
 import Debug from './Debug';
 import NotFound from './NotFound';
 import buildModeRoutes from './buildModeRoutes';
@@ -56,8 +56,8 @@ NotFoundStudy.propTypes = {
 // TODO: Include "routes" debug route if dev build
 const bakedInRoutes = [
   {
-    path: '/login',
-    children: Login,
+    path: '/signIn',
+    children: SignIn,
   },
   {
     path: '/notfoundserver',
