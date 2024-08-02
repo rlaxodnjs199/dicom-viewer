@@ -9,8 +9,8 @@ import Local from './Local';
 import SignIn from './SignIn';
 import Debug from './Debug';
 import NotFound from './NotFound';
+import ProtectedRoute from './ProtectedRoute';
 import buildModeRoutes from './buildModeRoutes';
-import PrivateRoute from './PrivateRoute';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -154,11 +154,9 @@ const createRoutes = ({
             key={i}
             path={route.path}
             element={
-              <PrivateRoute
-                handleUnauthenticated={() => userAuthenticationService.handleUnauthenticated()}
-              >
+              <ProtectedRoute>
                 <RouteWithErrorBoundary route={route} />
-              </PrivateRoute>
+              </ProtectedRoute>
             }
           ></Route>
         ) : (

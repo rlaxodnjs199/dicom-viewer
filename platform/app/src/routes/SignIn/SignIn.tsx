@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
+import { useSetAtom } from 'jotai';
+import { authAtom } from '../ProtectedRoute';
 import lamisLogo from '../../../../ui/src/assets/lamis/logo-text.png';
 
 export default function SignIn() {
+  const setIsAuthenticated = useSetAtom(authAtom);
+  const navigate = useNavigate();
+
   const handleSubmit = e => {
     e.preventDefault();
     if (e.target.username.value === 'admin' && e.target.password.value === 'snuhpia123!') {
-      window.location.href = '/';
+      setIsAuthenticated(true);
+      navigate('/');
     }
   };
 
