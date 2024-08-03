@@ -31,12 +31,15 @@ import { AppConfigProvider } from '@state';
 import createRoutes from './routes';
 import appInit from './appInit.js';
 import OpenIdConnectRoutes from './utils/OpenIdConnectRoutes';
+import { atomWithStorage } from 'jotai/utils';
 
 let commandsManager: CommandsManager,
   extensionManager: ExtensionManager,
   servicesManager: AppTypes.ServicesManager,
   serviceProvidersManager: ServiceProvidersManager,
   hotkeysManager: HotkeysManager;
+
+export const isAuthenticatedAtom = atomWithStorage('isAuthenticated', false);
 
 function App({
   config = {

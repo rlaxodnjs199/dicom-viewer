@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { useSetAtom } from 'jotai';
-import { authAtom } from '../ProtectedRoute';
+import { isAuthenticatedAtom } from '../../App';
 import lamisLogo from '../../../../ui/src/assets/lamis/logo-text.png';
 
 export default function SignIn() {
-  const setIsAuthenticated = useSetAtom(authAtom);
+  const setIsAuthenticated = useSetAtom(isAuthenticatedAtom);
   const navigate = useNavigate();
 
   const handleSubmit = e => {
